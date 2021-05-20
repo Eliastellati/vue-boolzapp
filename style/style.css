@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    position: relative;
+    background-color: #DADBD4;
+    height: 100vh;
+    z-index: 0;
+}
+
+main .top-bar {
+    position: absolute;
+    width: 100%;
+    height: 17vh;
+    background-color: #479789;
+    z-index: 1;
+}
+
+.app-container {
+    position: absolute;
+    display: flex;
+    width: 80%;
+    height: 90vh;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 3rem auto;
+    background-color: white;
+    z-index: 5;
+}
+
+.messages-container {
+    align-items: flex-start;
+    width: 35%;
+    background-color: red;
+    height: 100%;
+}
+
+.active-chat {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 65%;
+    background-image: url('../boolzap-img/mine.jpg');
+    background-size: contain;
+    background-repeat: repeat;
+    height: 100%;
+}
+
+.toggle-bar {
+    position: relative;
+    z-index: 9;
+    height: 60px;
+    background-color: #EAEAEA;
+}
+
+.messages-container .toggle-bar {
+    border-right: 1px solid #b6b6b6;
+    width: 100%;
+}
+
+.chat-type {
+    height: 60px;
+    background-color: white;
+}
+
+.notifications {
+    width: 100%;
+    height: 60px;
+    background-color: #8EDAFC;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: space-around;
+    padding: .5rem;
+    margin: 1rem 0;
+}
+
+.search-bar .lens-btn {
+    display: inline-block;
+    color: grey;
+    background-color: white;
+    width: 19%;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.search-bar input {
+    width: 80%;
+    border: none;
+}
+
+.chat {
+    display: flex;
+    height: 60px;
+    border-top: 1px solid grey;
+}
+
+.chat img {
+    border-radius: 50%;
+    margin: 0.5rem 1rem;
+}
+
+.contact {
+    background-color: yellow;
+    width: 60%;
+}
+
+.date {
+    background-color: green;
+}
