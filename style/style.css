@@ -194,22 +194,54 @@ main .top-bar {
 }
 
 .chat-wallpaper {
+    position: relative;
+    top: -150px;
     display: flex;
     flex-direction: column;
+    justify-items: flex-start;
 }
 
 .sent {
+    position: relative;
+    display: flex;
+    align-items: center;
     min-width: 20px;
     max-width: 80%;
-    height: 40px;
-    align-self: end;
-    background-color: green;
+    min-height: 40px;
+    align-self: flex-end;
+    background-color: #D5F9BA;
+    border-radius: 5px;
+    margin-top: .5rem;
+    margin-right: 1rem;
+    padding: 1rem;
+    padding-right: 2rem;
 }
 
 .received {
+    position: relative;
+    display: flex;
+    align-items: center;
     min-width: 20px;
     max-width: 80%;
-    height: 40px;
-    align-self: start;
-    background-color: white;
+    min-height: 50px;
+    align-self: flex-start;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    margin-top: .5rem;
+    margin-left: 1rem;
+    padding: 1rem;
+    padding-right: 2rem;
+}
+
+.sent p,
+.received p {
+    width: 100%;
+}
+
+.sent .data,
+.received .data {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: grey;
 }
