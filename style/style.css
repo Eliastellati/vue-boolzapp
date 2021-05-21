@@ -103,12 +103,12 @@ main .top-bar {
 }
 
 .notifications i {
-    font-size: 20px;
+    font-size: 16px;
     color: #8EDAFC;
     background-color: white;
     border-radius: 50%;
     padding: 1rem;
-    margin: 1rem;
+    margin: 1.2rem;
 }
 
 .notifications span {
@@ -138,19 +138,23 @@ main .top-bar {
     border: none;
 }
 
-#chat {
+.chat {
     display: flex;
     height: 60px;
     border-top: 2px solid #FAFAFA;
 }
 
-#chat img {
+.chat:hover {
+    background-color: #FAFAFA;
+}
+
+.chat img {
     border-radius: 50%;
     margin: 0.5rem 1rem;
 }
 
 .text {
-    width: 60%;
+    width: 50%;
     padding: .5rem;
 }
 
@@ -161,4 +165,51 @@ main .top-bar {
 .text span {
     color: rgb(184, 182, 182);
     font-weight: 300;
+    font-size: 10px;
+}
+
+.data {
+    text-transform: uppercase;
+    font-size: 8px;
+    color: lightgrey;
+    padding: .5rem;
+}
+
+.toggle-bar .contact {
+    display: flex;
+    max-height: 60px;
+}
+
+.contact img {
+    height: 60px;
+    padding: .5rem;
+    border-radius: 50%;
+}
+
+.contact .data {
+    color: grey;
+    text-transform: none;
+    font-size: 10px;
+    padding-left: 0;
+}
+
+.chat-wallpaper {
+    display: flex;
+    flex-direction: column;
+}
+
+.sent {
+    min-width: 20px;
+    max-width: 80%;
+    height: 40px;
+    align-self: end;
+    background-color: green;
+}
+
+.received {
+    min-width: 20px;
+    max-width: 80%;
+    height: 40px;
+    align-self: start;
+    background-color: white;
 }

@@ -40,27 +40,40 @@
                     </div>
                     <input type="text" placeholder="Cerca o inizia una nuva chat">
                 </div>
-                <div v-for="(contact, i) in contacts" id="chat">
-                    <img :src="'boolzap-img/avatar' + contact.avatar + '.jpg'">
+                <div v-for="(contact, i) in contacts" :class="{ 'active': i== activeIndex}" class="chat">
+                    <img :src=" 'boolzap-img/avatar' + contact.avatar + '.jpg' ">
 
-                    <div class="text">
-                        <h4 class="nome">{{contact.name}}</h4>
-                        <span class="last">{{contact.messages[contact.messages.length - 1].text}}</span>
+                    <div class="text ">
+                        <h4 class="nome ">{{contact.name}}</h4>
+                        <span class="last ">{{ getLastMessageText(i) }}</span>
                     </div>
-
-
+                    <div class="data ">
+                        {{ getLastMessageData(i) }}
+                    </div>
 
                 </div>
 
             </div>
-            <div class="active-chat">
-                <div class="toggle-bar"></div>
-                <div class="chat-wallpaper"></div>
-                <div class="chat-type"></div>
+            <div class="active-chat ">
+                <div class="toggle-bar ">
+                    <div class="contact">
+                        <img :src=" 'boolzap-img/avatar' + contacts[activeIndex].avatar + '.jpg' " alt="">
+                        <div class="text">
+                            <h4 class="name">{{contacts[activeIndex].name}}</h4>
+                            <div class="data"> Ultimo accesso {{ getLastMessageData(activeIndex) }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-wallpaper ">
+                    <div class="baloon" v-for="text in contacts[activeIndex].messages" :class="text.status">
+                        <p>{{ contacts[activeIndex].messages.text }}</p>
+                    </div>
+                </div>
+                <div class="chat-type "></div>
             </div>
         </div>
     </main>
-    <script src="script/script.js"></script>
+    <script src="script/script.js "></script>
 </body>
 
 </html>

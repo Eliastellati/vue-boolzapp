@@ -81,7 +81,19 @@ var app = new Vue({
                     }
                 ],
             },
-        ]
+        ],
+        activeIndex: 0
+    },
+    methods: {
+        getLastMessageData: function(contactIndex) {
+            const lastMessageIndex = this.contacts[contactIndex].messages.length - 1;
+            return this.contacts[contactIndex].messages[lastMessageIndex].date;
+        },
+
+        getLastMessageText: function(contactIndex) {
+            const lastMessageIndex = this.contacts[contactIndex].messages.length - 1;
+            return this.contacts[contactIndex].messages[lastMessageIndex].text.substr(0, 20) + "...";
+        },
     }
 
 })
