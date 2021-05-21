@@ -40,7 +40,7 @@
                     </div>
                     <input type="text" placeholder="Cerca o inizia una nuva chat">
                 </div>
-                <div v-for="(contact, i) in contacts" :class="{ 'active': i== activeIndex}" class="chat">
+                <div v-for="(contact, i) in contacts" :class="{ 'active': i== activeIndex}" class="chat" @click="setActive(i)">
                     <img :src=" 'boolzap-img/avatar' + contact.avatar + '.jpg' ">
 
                     <div class="text ">

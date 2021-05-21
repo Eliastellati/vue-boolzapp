@@ -94,6 +94,10 @@ var app = new Vue({
             const lastMessageIndex = this.contacts[contactIndex].messages.length - 1;
             return this.contacts[contactIndex].messages[lastMessageIndex].text.substr(0, 20) + "...";
         },
+
+        setActive(newIndex) {
+            this.activeIndex = newIndex;
+        }
     }
 
 })

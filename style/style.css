@@ -142,6 +142,7 @@ main .top-bar {
     display: flex;
     height: 60px;
     border-top: 2px solid #FAFAFA;
+    cursor: pointer;
 }
 
 .chat:hover {
@@ -214,7 +215,7 @@ main .top-bar {
     margin-top: .5rem;
     margin-right: 1rem;
     padding: 1rem;
-    padding-right: 2rem;
+    padding-right: 5rem;
 }
 
 .received {
@@ -230,12 +231,13 @@ main .top-bar {
     margin-top: .5rem;
     margin-left: 1rem;
     padding: 1rem;
-    padding-right: 2rem;
+    padding-right: 5rem;
 }
 
 .sent p,
 .received p {
     width: 100%;
+    font-size: 12px;
 }
 
 .sent .data,
