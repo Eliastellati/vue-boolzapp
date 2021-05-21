@@ -75,6 +75,7 @@ main .top-bar {
     line-height: 100%;
     display: flex;
     align-items: center;
+    font-weight: 300;
 }
 
 .messages-container .toggle-bar .toggles {
@@ -87,6 +88,7 @@ main .top-bar {
 .toggles i {
     color: grey;
     padding: .5rem;
+    cursor: pointer;
 }
 
 .chat-type {
