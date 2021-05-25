@@ -84,6 +84,13 @@ var app = new Vue({
         ],
         activeIndex: 0
     },
+    computed: {
+        filteredList() {
+            return this.contacts.filter(contact => {
+                return contact.title.toLowerCase().includes(this.search.toLowerCase())
+            })
+        }
+    },
     methods: {
         getLastMessageData: function(contactIndex) {
             const lastMessageIndex = this.contacts[contactIndex].messages.length - 1;
@@ -92,12 +99,41 @@ var app = new Vue({
 
         getLastMessageText: function(contactIndex) {
             const lastMessageIndex = this.contacts[contactIndex].messages.length - 1;
-            return this.contacts[contactIndex].messages[lastMessageIndex].text.substr(0, 20) + "...";
+            return this.contacts[contactIndex].messages[lastMessageIndex].text.substr(0, 20);
         },
 
         setActive(newIndex) {
             this.activeIndex = newIndex;
-        }
-    }
+        },
 
+        oraAttuale(message) {
+            var d = new Date();
+            var h = addZero(d.getHours());
+            var m = addZero(d.getMinutes());
+            var s = addZero(d.getSeconds());
+            let dataCompleta = `${d}, ${h}/${m}/${s}`
+            return dataCompleta;
+        },
+
+        aggiungiMessaggio(contactIndex) {
+
+            console.log(this.message);
+            this.contacts[this.activeIndex].messages.push({
+                date: this.oraAttuale,
+                text: this.message,
+                status: 'sent',
+
+            });
+            this.message = '';
+            setTimeout(() => {
+
+                this.contacts[this.activeIndex].messages.push({
+                    date: `${this.oraAttuale}`,
+                    text: 'E allora?',
+                    status: 'received',
+                }, )
+            }, 3000)
+
+        },
+    },
 })

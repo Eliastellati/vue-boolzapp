@@ -38,8 +38,10 @@
                     <div class="lens-btn">
                         <i class="fas fa-search"></i>
                     </div>
-                    <input type="text" placeholder="Cerca o inizia una nuva chat">
+                    <input type="text" v-model="search" placeholder="Cerca o inizia una nuva chat">
+
                 </div>
+
                 <div v-for="(contact, i) in contacts" :class="{ 'active': i== activeIndex}" class="chat" @click="setActive(i)">
                     <img :src=" 'boolzap-img/avatar' + contact.avatar + '.jpg' ">
 
@@ -70,7 +72,12 @@
                         <span class="data">{{ text.date }}</span>
                     </div>
                 </div>
-                <div class="chat-type "></div>
+                <div class="input-chat">
+                    <i class="fas fa-smile"></i>
+                    <!-- aggiunto keyup per invio messaggio quando si pigia Enter -->
+                    <input v-model="message" @keyup.enter="aggiungiMessaggio" placeholder=" Scrivi un messaggio">
+                    <i class="fas fa-microphone"></i>
+                </div>
             </div>
         </div>
     </main>
